@@ -15,7 +15,6 @@ namespace MenuSystem {
         [SerializeField] private TextMeshProUGUI _label;
         [SerializeField] private Image _backArrow;
         [SerializeField] private Button _backArrowBtn;
-        [SerializeField] private Menu[] _array;
         private List<Menu> _menus;
         private bool _flowing;
 
@@ -29,6 +28,7 @@ namespace MenuSystem {
             _menus = new List<Menu>();
             _backArrow.enabled = false;
             _backArrowBtn.onClick.AddListener(() => {
+                Menu.Current.Cleanup();
                 Pop().gameObject.SetActive(false);
                 Peek().gameObject.SetActive(true);
                 Peek().Animate();
@@ -42,14 +42,12 @@ namespace MenuSystem {
             }
             
             _menus.Add(menu);
-            _array = _menus.ToArray();
             Repaint();
         }
 
         public Menu Pop() {
             Menu menu = _menus[_menus.Count - 1];
             _menus.RemoveAt(_menus.Count - 1);
-            _array = _menus.ToArray();
             Repaint();
             return menu;
         }

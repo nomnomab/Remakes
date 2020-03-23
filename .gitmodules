@@ -2,3 +2,7 @@
 	path = 1-Menu-System
 	url = https://github.com/nomnomab/1-Menu-System.git
 	branch = master
+[submodule "2-RTS-Camera"]
+	path = 2-RTS-Camera
+	url = https://github.com/nomnomab/2-RTS-Camera.git
+	branch = master

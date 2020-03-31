@@ -6,3 +6,7 @@
 	path = 2-RTS-Camera
 	url = https://github.com/nomnomab/2-RTS-Camera.git
 	branch = master
+[submodule "3-Superhot"]
+	path = 3-Superhot
+	url = https://github.com/nomnomab/3-Superhot
+	branch = master
